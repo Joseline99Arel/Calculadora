@@ -1,0 +1,45 @@
+
+package Main;
+import Operaciones.Calculos;
+import java.util.Scanner;
+
+public class Principal {
+    public static void main(String[] args){     
+        Scanner entrada= new Scanner (System.in);
+        int respuesta =0, contador =1;
+        
+        Calculos relacion=new Calculos();
+        
+        while(contador==1){      
+            System.out.println("----Elige una  opcion-----");
+            System.out.println("1.- Suma");
+            System.out.println("2.- Resta");
+            System.out.println("3.- Multiplicacion");
+            System.out.println("4.- Division");
+            System.out.println("5.- Salir");
+            respuesta=entrada.nextInt();
+            
+            if(respuesta>0 && respuesta<6){
+                switch(respuesta)
+                {
+                    case 1: relacion.Suma();
+                        break;
+                    case 2: relacion.Resta();
+                        break;
+                    case 3: relacion.Multiplicacion();
+                        break;
+                    case 4: relacion.Divicion();
+                        break;
+                    case 5: System.exit(0);
+                        break;
+                }
+                System.out.println("Quieres repetir el proceso 1:Si 2:No");
+                contador=entrada.nextInt();
+            }
+            else
+            {
+                System.out.println("El numero que ingresaste fuera de las opciones ");
+            }
+        }
+    }   
+}
